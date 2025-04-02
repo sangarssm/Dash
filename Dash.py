@@ -1,7 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input
 import plotly.express as px
 import pandas as pd
-df = pd.read_csv(r'C:\Users\75047\Downloads\datasets(Sheet2) (2).csv', encoding='ISO-8859-1')
+df = pd.read_csv('./data/datasets(Sheet2) (2).csv')
 app = Dash()
 server = app.server
 app.layout = html.Div([
