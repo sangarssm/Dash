@@ -4,6 +4,9 @@ import pandas as pd
 df = pd.read_csv('./data/datasets(Sheet2) (2).csv')
 app = Dash()
 server = app.server
+@server.before_first_request
+def bfr():
+    print("Testing")
 app.layout = html.Div([
     html.H1(children='FIFA Winners', style={'textAlign':'center'}),
     html.H2("Select a Country:"),
@@ -46,4 +49,4 @@ def update_graph(value):
 
         
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run_server(debug=True)
